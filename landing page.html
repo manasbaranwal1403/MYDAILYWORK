@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EveryThink - Empowering Creativity</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f3f4f6;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #0f0f0f;
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            color: #ffffff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        nav ul li a:hover {
+            color: #00bfa6;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('https://via.placeholder.com/1920x1080');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+
+        .hero a {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #00bfa6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .hero a:hover {
+            background-color: #019f86;
+        }
+
+        /* About Section */
+        .about {
+            padding: 50px 0;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .about h2 {
+            margin-bottom: 20px;
+            color: #0f0f0f;
+        }
+
+        .about p {
+            line-height: 1.6;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 50px 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .service-box {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            width: 30%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-box h3 {
+            color: #0f0f0f;
+        }
+
+        .service-box p {
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f0f0f;
+            padding: 20px;
+            text-align: center;
+            color: #ffffff;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: #00bfa6;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="container">
+            <h1>EveryThink</h1>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Unleashing Creativity, One Idea at a Time</h2>
+        <p>Your vision, our mission. Let’s create something extraordinary together!</p>
+        <a href="#services">Explore Services</a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>EveryThink is a parent company leading various startups including BeatStreet Studios, DireNote Media, and Rezonate. Our mission is to empower creators and bring innovative ideas to life. From music distribution to creative community building, we're here to support your journey.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="service-box">
+                <h3>Music Distribution</h3>
+                <p>Get your tracks distributed on major streaming platforms through DireNote Media.</p>
+            </div>
+            <div class="service-box">
+                <h3>Studio Services</h3>
+                <p>BeatStreet Studios provides high-quality recording, mixing, and mastering services to elevate your sound.</p>
+            </div>
+            <div class="service-box">
+                <h3>Community Building</h3>
+                <p>Join our creative community to connect, collaborate, and grow. INX STAIN brings writers, rappers, and musicians together.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2024 EveryThink | Built by Manas Baranwal</p>
+        <p>Follow us on <a href="https://www.instagram.com">Instagram</a></p>
+    </footer>
+</body>
+
+</html>
