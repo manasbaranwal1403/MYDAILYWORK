@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz Maker</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .container {
+            background-color: #fff;
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: center;
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background: #667eea;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background: #764ba2;
+            transform: translateY(-3px);
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        .quiz-option {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #764ba2;
+        }
+
+        .navbar {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .navbar a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #f5c6e6;
+        }
+
+        .question-section {
+            margin-top: 20px;
+        }
+
+        .question-item {
+            margin-bottom: 20px;
+        }
+
+        .quiz-list, .result-section {
+            margin-top: 20px;
+        }
+
+        .quiz-item, .result-item {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz-item h2 {
+            color: #667eea;
+        }
+
+        .result-item {
+            border-left: 5px solid #764ba2;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#create">Create Quiz</a>
+        <a href="#take">Take Quiz</a>
+        <a href="#auth">Login/Register</a>
+    </div>
+
+    <!-- Homepage Section -->
+    <div class="container" id="home">
+        <h1>Welcome to Online Quiz Maker!</h1>
+        <p>Create engaging quizzes or challenge yourself by taking quizzes shared by others.</p>
+        <button onclick="location.href='#create'">Create a Quiz</button>
+        <button onclick="location.href='#take'">Take a Quiz</button>
+    </div>
+
+    <!-- Quiz Creation Section -->
+    <div class="container" id="create">
+        <h1>Create a New Quiz</h1>
+        <form id="quizForm">
+            <input type="text" placeholder="Quiz Title" required>
+            <div class="question-section">
+                <div class="question-item">
+                    <input type="text" placeholder="Enter your question" required>
+                    <input type="text" class="quiz-option" placeholder="Option 1" required>
+                    <input type="text" class="quiz-option" placeholder="Option 2" required>
+                    <input type="text" class="quiz-option" placeholder="Option 3" required>
+                    <input type="text" class="quiz-option" placeholder="Option 4" required>
+                </div>
+            </div>
+            <button>Add Another Question</button>
+            <button type="submit">Create Quiz</button>
+        </form>
+    </div>
+
+    <!-- Quiz Taking Section -->
+    <div class="container" id="take">
+        <h1>Take a Quiz</h1>
+        <div class="quiz-list">
+            <div class="quiz-item">
+                <h2>Sample Quiz: General Knowledge</h2>
+                <button>Start Quiz</button>
+            </div>
+            <div class="quiz-item">
+                <h2>Sample Quiz: History Trivia</h2>
+                <button>Start Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Results Section -->
+    <div class="container" id="results">
+        <h1>Quiz Results</h1>
+        <div class="result-section">
+            <div class="result-item">
+                <p><strong>Score:</strong> 8/10</p>
+                <p><strong>Correct Answers:</strong></p>
+                <ul>
+                    <li>Question 1: Correct</li>
+                    <li>Question 2: Incorrect</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Authentication Section -->
+    <div class="container" id="auth">
+        <h1>Login / Register</h1>
+        <form>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <p>Don't have an account? <a href="#register">Register here</a>.</p>
+        </form>
+    </div>
+</body>
+
+</html>
