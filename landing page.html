@@ -11,35 +11,49 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background-color: #f3f4f6;
+            background-color: #f0f4f8;
             color: #333;
+            line-height: 1.6;
         }
 
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Container */
         .container {
-            width: 80%;
-            margin: 0 auto;
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
         }
 
         /* Navbar */
         nav {
-            background-color: #0f0f0f;
-            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: #0d0d0d;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 15px 0;
         }
 
         nav h1 {
-            color: #ffffff;
+            color: #00ffa1;
+            font-size: 1.8rem;
         }
 
         nav ul {
+            list-style: none;
             display: flex;
-            list-style-type: none;
         }
 
         nav ul li {
@@ -47,20 +61,21 @@
         }
 
         nav ul li a {
-            text-decoration: none;
             color: #ffffff;
+            font-weight: 500;
+            padding: 8px 15px;
+            transition: background-color 0.3s;
         }
 
         nav ul li a:hover {
-            color: #00bfa6;
+            background-color: #00ffa1;
+            border-radius: 5px;
         }
 
         /* Hero Section */
         .hero {
-            background-image: url('https://via.placeholder.com/1920x1080');
-            background-size: cover;
-            background-position: center;
-            height: 60vh;
+            height: 80vh;
+            background: linear-gradient(135deg, #0d0d0d, #1e1e1e);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -70,79 +85,124 @@
         }
 
         .hero h2 {
-            font-size: 3rem;
+            font-size: 3.5rem;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         .hero p {
             font-size: 1.2rem;
-            margin-top: 15px;
+            margin: 20px 0;
         }
 
         .hero a {
             margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #00bfa6;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
+            padding: 12px 30px;
+            background-color: #00ffa1;
+            color: #0d0d0d;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: transform 0.3s;
         }
 
         .hero a:hover {
-            background-color: #019f86;
+            transform: translateY(-5px);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         /* About Section */
         .about {
-            padding: 50px 0;
             background-color: #ffffff;
+            padding: 60px 0;
             text-align: center;
         }
 
         .about h2 {
             margin-bottom: 20px;
-            color: #0f0f0f;
+            font-size: 2.5rem;
+            color: #0d0d0d;
         }
 
         .about p {
-            line-height: 1.6;
+            line-height: 1.8;
+            margin: 20px auto;
+            max-width: 800px;
         }
 
         /* Services Section */
         .services {
-            padding: 50px 0;
+            background-color: #f0f4f8;
+            padding: 60px 0;
             display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
             justify-content: space-around;
         }
 
         .service-box {
             background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            width: 30%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            width: 300px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
 
         .service-box h3 {
-            color: #0f0f0f;
+            font-size: 1.8rem;
+            color: #0d0d0d;
         }
 
         .service-box p {
-            margin-top: 10px;
-            line-height: 1.5;
+            margin-top: 15px;
+            color: #666;
         }
 
         /* Footer */
         footer {
-            background-color: #0f0f0f;
-            padding: 20px;
+            background-color: #0d0d0d;
+            padding: 30px 20px;
             text-align: center;
             color: #ffffff;
-            margin-top: 30px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
         }
 
         footer a {
-            color: #00bfa6;
-            text-decoration: none;
+            color: #00ffa1;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #00d48b;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -162,41 +222,39 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h2>Unleashing Creativity, One Idea at a Time</h2>
-        <p>Your vision, our mission. Let’s create something extraordinary together!</p>
-        <a href="#services">Explore Services</a>
+        <h2>Unlocking Your Creative Potential</h2>
+        <p>EveryThink brings your ideas to life, from music to media and beyond.</p>
+        <a href="#services">Explore Now</a>
     </section>
 
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <h2>About Us</h2>
-            <p>EveryThink is a parent company leading various startups including BeatStreet Studios, DireNote Media, and Rezonate. Our mission is to empower creators and bring innovative ideas to life. From music distribution to creative community building, we're here to support your journey.</p>
+            <h2>About EveryThink</h2>
+            <p>We are the parent company behind BeatStreet Studios, DireNote Media, and Rezonate, empowering creators with the tools and platforms they need to succeed. Our mission is to bring creative minds together to achieve greatness.</p>
         </div>
     </section>
 
     <!-- Services Section -->
     <section class="services" id="services">
-        <div class="container">
-            <div class="service-box">
-                <h3>Music Distribution</h3>
-                <p>Get your tracks distributed on major streaming platforms through DireNote Media.</p>
-            </div>
-            <div class="service-box">
-                <h3>Studio Services</h3>
-                <p>BeatStreet Studios provides high-quality recording, mixing, and mastering services to elevate your sound.</p>
-            </div>
-            <div class="service-box">
-                <h3>Community Building</h3>
-                <p>Join our creative community to connect, collaborate, and grow. INX STAIN brings writers, rappers, and musicians together.</p>
-            </div>
+        <div class="service-box">
+            <h3>Music Distribution</h3>
+            <p>Distribute your tracks on all major platforms with DireNote Media.</p>
+        </div>
+        <div class="service-box">
+            <h3>Studio Services</h3>
+            <p>Get high-quality mixing and mastering services with BeatStreet Studios.</p>
+        </div>
+        <div class="service-box">
+            <h3>Creative Community</h3>
+            <p>Join our INX STAIN community to connect, collaborate, and grow.</p>
         </div>
     </section>
 
     <!-- Footer -->
     <footer id="contact">
-        <p>&copy; 2024 EveryThink | Built by Manas Baranwal</p>
-        <p>Follow us on <a href="https://www.instagram.com">Instagram</a></p>
+        <p>&copy; 2024 EveryThink | Crafted by Manas Baranwal</p>
+        <p>Follow us on <a href="https://www.instagram.com">Instagram</a> | <a href="https://twitter.com">Twitter</a> | <a href="https://linkedin.com">LinkedIn</a></p>
     </footer>
 </body>
 
